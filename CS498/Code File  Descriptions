@@ -1,0 +1,19 @@
+Coding Problem 1 - Wheel Odometry vs GPS Trajectory 
+This project analyzes robot trajectory estimation using two different localization methods: wheel odometry and GPS measurements. Sensor topics such as accelerometer, gyroscope, wheel speeds, and GPS coordinates are published and visualized in ROS.
+Wheel odometry produces a smoother trajectory because it updates frequently using encoder data, but it accumulates drift over time due to integration errors and wheel slip. GPS measurements provide more accurate global positioning but appear noisier and less continuous because of lower update rates and satellite signal noise.
+
+Coding Problem 2 - GPS-INS Sensor Fusion with EKF 
+This project implements an Extended Kalman Filter (EKF) to fuse high-frequency IMU data with low-frequency GPS measurements for robot state estimation. The system estimates the robot’s position, orientation, velocity, and sensor biases while analyzing how different noise parameters affect the filter behavior.
+Experiments investigate the impact of the process noise matrix Q and measurement noise matrix R on the stability and accuracy of the EKF. The project demonstrates how tuning these parameters influences trajectory smoothness, responsiveness, and drift in sensor-fusion system
+
+Coding Problem 3 - LiDAR Mapping and SLAM  
+This project processes LiDAR data from a mobile robot to perform feature extraction, mapping, and SLAM. A Python ROS2 node reads LiDAR scan data and implements a line-fitting algorithm to detect walls and corners from range measurements.
+The detected features are used to build a geometric map of the environment, which is then compared with a map generated using the Gmapping SLAM algorithm. This exercise demonstrates how LiDAR sensing can be used for environment perception and robot localization
+
+Problem Set 2 - Mobile Robot Control and Coordinate Transformations
+This project focuses on robotics kinematics, coordinate transformations, and trajectory tracking control. The first part computes transformations between multiple coordinate frames, returning rotation matrices, quaternions, Euler angles, and translation vectors.
+The second part simulates a differential drive robot and implements PID controllers to regulate linear and angular velocities so the robot follows a desired trajectory. The system continuously updates position and orientation while minimizing distance and heading errors.
+
+Problem Set3 - INS Navigation and Kalman Filtering
+This project explores inertial navigation and probabilistic state estimation. It begins by demonstrating how accelerometer noise and bias cause position estimation errors to grow over time in an unaided inertial navigation system.
+To address this issue, a Kalman Filter and Extended Kalman Filter are implemented to fuse IMU, GPS, gyroscope, and encoder measurements. The system estimates the robot’s position, velocity, orientation, and sensor bias while reducing accumulated drift through sensor fusion.
